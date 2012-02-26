@@ -11,6 +11,10 @@ $(document).ready(function(){
 
       title = xml.find("title");
       description = xml.find("description");
+
+      foo = $("<div/>");
+      foo.html(description.text());
+
       price = xml.find("price");
       tags = xml.find("tags");
       organizer_url = xml.find("organizer").find("url");
@@ -28,7 +32,7 @@ $(document).ready(function(){
       });
 
       $("#queued_event_name").val(title.text());
-      $("#queued_event_description").val(description.text());
+      $("#queued_event_description").val(foo.text());
       $("#queued_event_price").val(price.text());
       $("#queued_event_keywords").val(tags.text());
       $("#queued_event_url").val(organizer_url.text());
